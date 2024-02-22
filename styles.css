@@ -1,0 +1,549 @@
+:root {
+  --font-family: "Source Sans Pro", sans-serif;
+  --font-size-xsmall: 12px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-bigger_mediu: 18px;
+  --font-size-big: 32px;
+  --font-size-xbig: 46px;
+
+  --color-white: #FFF;
+  --color-red: #FF6565;
+  --color-dark-blue: #071629;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+/* Landing Page */
+@media screen and (min-width: 565px)  {
+  header {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    height: 80%;
+    width: 80%;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1000px;
+  }
+
+  .header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    gap: 41px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: var(--font-size-small);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  a:hover, a:active {
+    color: var(--color-red);
+    opacity: 0.9
+  }
+
+  #logo {
+    width: 161px;
+    height: 32px;
+    z-index: 2;
+  }
+}
+
+.hidden-header {
+  display: none;
+}
+
+.drop-down {
+  display: none;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 565px)  {
+
+  .header_container {
+    display: none;
+  }
+
+  header {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 3;
+    height: 80%;
+    width: 80%;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hidden-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+  }
+
+  #logo {
+    width: 161px;
+    height: 32px;
+    z-index: 2;
+  }
+
+  .hidden-menu-container {
+    display: flex;
+    margin-right: 5rem;
+    position: relative;
+  }
+
+  .hidden-menu {
+    position: absolute;
+    display: flex;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+  }
+
+  .hidden-header_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-right: 7rem;
+  }
+
+  /* checkbox unchecked */
+  .menu-icon .menu-close {
+    display: none;
+  }
+
+  /* checkbox checked */
+  .hidden-menu:checked + .menu-icon .menu-open {
+    display: none;
+  }
+
+  .hidden-menu:checked + .menu-icon .menu-close {
+    display: inline-block;
+  }
+
+
+  header .drop-down {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 125px;
+    margin-top: 17rem;
+  }
+
+  .drop-down nav {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .drop-down nav a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: var(--font-size-small);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  nav a:hover, nav a:active {
+    color: var(--color-red);
+    opacity: 0.9
+  }
+
+  .hidden-menu:checked ~ .drop-down {
+    display: flex;
+  }
+}
+
+.hero {
+  background: url(images/headphones_hero_1.jpg) center/cover no-repeat;
+  z-index: 1;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero_container {
+  margin-top: 325px;
+  color: var(--color-white);
+  width: 55%;
+  text-align: center;
+  margin-bottom: 95px;
+}
+
+.hero_container h2 {
+  color: var(--color-white);
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: var(--font-size-big);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.hero_container h4 {
+  color: var(--color-white);
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: var(--font-size-medium);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: -25px;
+  margin-bottom: 40px;
+}
+
+button {
+  width: 162px;
+  height: 44px;
+  flex-shrink: 0;
+  background-color: var(--color-red);
+  border-radius: 22px;
+  color: var(--color-white);
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 0;
+}
+
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.hero_container p {
+  color: var(--color-white);
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: var(--font-size-medium);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin-top: 65px;
+}
+
+/* What We Do */
+
+.WWD_container {
+  width: 100%;
+  display: flex;
+  background-color: var(--color-white);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.WWD_text {
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+.WWD_text h2 {
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size-big);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+
+.WWD_text p {
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.WWD_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  width:  90%;
+  justify-content: space-evenly;
+  gap: 90px;
+  margin-top: 98px;
+  margin-bottom: 110px;
+}
+
+.WWD_card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 180px;
+}
+
+.WWD_card_text {
+  width: 100%;
+}
+
+.WWD_card h5 {
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size-bigger_medium);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.WWD_card p {
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+/* Our Results */
+
+.OUR_container {
+  width: 100%;
+  background: url(images/headphones_hero_2.jpg) center/cover no-repeat;
+  z-index: 1;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+.OUR_text {
+  margin-top: 141px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+.OUR_text h2 {
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size-big);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.OUR_text p {
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size-medium);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.OUR_poly_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  width:  90%;
+  justify-content: space-evenly;
+  gap: 90px;
+  margin-top: 98px;
+  margin-bottom: 110px;
+}
+
+.OUR_poly {
+  position: relative;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.OUR_poly h1 {
+  position: absolute;
+  left: 50px;
+  top: 40px;
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: var(--font-size-xbig);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.OUR_poly p {
+  position: absolute;
+  left: 35px;
+  top: 105px;
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: var(--font-size-small);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+/* Contact Us */
+
+.Contact_container {
+  width: 100%;
+  display: flex;
+  background-color: var(--color-white);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 110px;
+  margin-bottom: 170px;
+  width: 335px;
+  height: 373px;
+  justify-content: space-between;
+  gap: 50px;
+
+}
+
+.form_container h1 {
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size-big);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+}
+
+form input {
+  height: 54px;
+  background: white;
+  margin-bottom: 15px;
+  border: none;
+  color: var(--color-dark-blue);
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  border: 5px solid #66da4300;
+  border-bottom: 1px solid var(--color-dark-blue);
+  outline: none;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+input::placeholder {
+  color: var(--color-dark-blue);
+}
+
+.form_button {
+    margin-top: 40px;
+  width: 162px;
+  height: 44px;
+  flex-shrink: 0;
+  background-color: var(--color-red);
+  border-radius: 22px;
+  color: var(--color-white);
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 0;
+  align-self: center;
+}
+
+.form_button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 249px;
+  background-color: var(--color-dark-blue);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.copyright {
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-xsmall);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.3517;
+  margin-top: 40px;
+}
